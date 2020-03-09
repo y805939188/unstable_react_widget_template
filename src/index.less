@@ -1,0 +1,94 @@
+.echarts {
+  width: 100%;
+  height: 600px;
+}
+.wrapper {
+  width: 100%;
+  height: 550px;
+  user-select: unset !important;
+}
+.wrapper > div:nth-of-type(1) {
+  cursor: unset !important;
+}
+.table {
+  border-left: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+.light {
+  float: left;
+  height: 12px;
+  border-radius: 6px;
+  margin-left: 70px;
+}
+.show {
+  margin-top: 12px;
+  text-align: right;
+  line-height: 12px;
+  .succeeded {
+    display: inline-block;
+    margin-left: 24px;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(54,179,126, 0.9);
+    vertical-align: text-top;
+  }
+  .failed {
+    display: inline-block;
+    margin-left: 24px;
+    width: 12px;
+    height: 12px;
+    background-color: #CC1B1B;
+    vertical-align: text-top;
+  }
+  .running {
+    display: inline-block;
+    margin-left: 24px;
+    width: 12px;
+    height: 12px;
+    background-color: #0065FF;
+    vertical-align: text-top;
+  }
+  .waiting {
+    display: inline-block;
+    margin-left: 24px;
+    width: 12px;
+    height: 12px;
+    background-color: #D5D0DD;
+    vertical-align: text-top;
+  }
+  .now-line {
+    display: inline-block;
+    height: 0;
+    width: 24px;
+    border-top: dashed 2px #16c4c6;
+    vertical-align: middle;
+    border-color: #16c4c6;
+  }
+}
+.switch-word {
+  margin-right: 12px;
+}
+.can-not-stop{
+  cursor: not-allowed;
+  color: #9FA7B1;
+  &:hover {
+    cursor: not-allowed;
+    color: #9FA7B1;
+  }
+}
+.button {
+
+}
+.refresh{
+
+}
+:global {
+  .pd-modal-size-large-plus {
+    .ant-modal-body {
+      min-height: 650px!important;
+    }
+    .close-btn {
+      margin-top: -16px;
+    }
+  }
+}

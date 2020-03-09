@@ -1,0 +1,335 @@
+:global {
+    .lr-container {
+        position: relative;
+        margin: 0 auto;
+        width: 1180px;
+        height: 640px;
+        font-size: 12px;
+        color: #212121;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+
+    #lr-graph {
+        position: relative;
+        width: 1180px;
+        margin: 0 auto;
+        background-color: #fff;
+        border: solid 1px #d5d9dd;
+    }
+
+    .lr-visu-header {
+        box-sizing: border-box;
+        width: 100%;
+        height: 64px;
+        border-bottom: solid 1px #d8d8d8;
+        padding: 15px 26px;
+    }
+
+    .lr-visu-header .icon {
+        width: 2px;
+        height: 32px;
+        margin-right: 15px;
+        background-color: #66c8cb;
+    }
+
+    .lr-visu-header .title {
+        font-size: 24px;
+        margin-right: 70px;
+    }
+
+    .lr-visu-header>div {
+        display: inline-block;
+        margin-right: 70px;
+        line-height: 32px;
+        font-size: 18px;
+        color: #474747;
+        vertical-align: top;
+    }
+
+    .searchBox-wrapper {
+        display: inline-block;
+    }
+
+    .hintinfo-wrapper {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+
+    .lrchart {
+        font-size: 12px;
+        color: #474747;
+        padding-bottom: 10px;
+    }
+
+    .lrchart .chart-wrapper {
+        // height: 500px;
+        overflow: auto;
+    }
+
+    .lrchart .row.table-header {
+        background-color: #f7f7f7;
+        text-align: center;
+        border-bottom: solid 1px #f7fbfc;
+    }
+
+    .lrchart .row {
+        height: 32px;
+        line-height: 32px;
+        margin-bottom: 0;
+    }
+
+    .lrchart .row .td {
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .lrchart .row svg,
+    .boxplot-xaxis svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .lrchart .row:nth-child(2n+1) {
+        background-color: #f9f9f9;
+    }
+
+    .lrchart .row .td:nth-child(1) {
+        width: 92px;
+        text-align: center;
+    }
+
+    .lrchart .row .td:nth-child(2) {
+        box-sizing: border-box;
+        width: 140px;
+        padding-right: 22px;
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .lrchart .row .td:nth-child(3) {
+        box-sizing: border-box;
+        width: 416px;
+        background-color: #f7f7f7;
+        border-left: solid 1px #f1f1f1;
+        border-right: solid 1px #f1f1f1;
+    }
+
+    .lrchart .row .td:nth-child(4) {
+        width: 230px;
+        border-right: solid 1px #dadada;
+    }
+
+    .lrchart .row .td:nth-child(5) {
+        width: 280px;
+    }
+
+    .lrchart .row:hover,
+    .lrchart .row:hover .td:nth-child(3) {
+        cursor: pointer;
+        background-color: rgba(0, 173, 175, 0.1);
+    }
+
+    .lrchart .row.selected,
+    .lrchart .row.selected .td:nth-child(3) {
+        cursor: pointer;
+        background-color: rgba(0, 173, 175, 0.2);
+    }
+
+    .lr-tooltip {
+        position: absolute;
+        z-index: 100;
+        top: 0px;
+        left: 50%;
+        margin: 0px;
+        padding: 5px 14px;
+        background-color: rgba(72, 72, 72, 0.8);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        border-radius: 2px;
+        white-space: nowrap;
+        color: #fff;
+        text-align: center;
+    }
+
+    .lr-tooltip table {
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        border-collapse: separate;
+    }
+
+    .lr-tooltip thead tr {
+        border-bottom: solid 1px #808080;
+    }
+
+    .lr-tooltip thead th,
+    .lr-tooltip tbody td {
+        padding: 5px;
+        min-width: 100px;
+        max-width: 170px;
+        white-space: normal;
+        line-height: 1.5;
+        word-wrap: break-word;
+    }
+
+    .lr-nonZeroRatio-tooltip p {
+        margin: 1em 0;
+    }
+
+    .show {
+        display: block;
+    }
+    .hide {
+        display: none;
+    }
+
+    .boxplot-xaxis {
+        width: 414px;
+        height: 43px;
+        margin-left: 231px;
+    }
+
+    #lr-feature-detail {
+        box-sizing: border-box;
+        position: absolute;
+        left: 647px;
+        top: 37px;
+        width: 532px;
+        height: 550px;
+        text-align: center;
+        z-index: 10;
+        padding: 0 100px;
+        background-color: #fff;
+    }
+
+    #lr-feature-detail .close {
+        position: absolute;
+        left: 25px;
+        height: 28px;
+        width: 16px;
+        margin-top: 20px;
+        background: url(../common/img/back.svg) no-repeat;
+        cursor: pointer;
+    }
+
+    #lr-feature-detail .download {
+        cursor: pointer;
+    }
+
+    #lr-feature-detail .download span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #lr-feature-detail .idownload {
+        display: inline-block;
+        margin-right: 10px;
+        height: 17px;
+        width: 14px;
+        background: url(../common/img/download.svg) no-repeat;
+    }
+
+    #lr-feature-detail .name {
+        font-size: 18px;
+        color: #212121;
+        margin: 10px 0 6px;
+    }
+
+    #lr-feature-detail .feature-count {
+        color: #212121;
+        margin-bottom: 10px;
+    }
+
+    #lr-detail-graph {
+        position: relative;
+        box-sizing: border-box;
+        padding: 0 50px;
+        height: 107px;
+    }
+
+    .lr-circle-nonZeroRatio-container {
+        width: 50%;
+        position: absolute;
+        left: 0;
+    }
+
+    #lr-circle-nonZeroRatio,
+    #lr-circle-featureRatio {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+    }
+
+    .lr-circle-featureRatio-container {
+        width: 50%;
+        position: absolute;
+        right: 0;
+    }
+
+    .nonZeroRatio-label,
+    .featureRatio-label {
+        margin: 10px 0 12px;
+    }
+
+    .detail-loading {
+        margin-top: 100px;
+    }
+
+    .detail-table th,
+    .detail-table td {
+        font-weight: normal;
+        text-align: center;
+        height: 28px;
+        box-sizing: border-box;
+        width: 165px;
+        min-width: 165px;
+        max-width: 165px;
+        color: #212121;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding: 0 10px;
+        vertical-align: middle;
+    }
+
+    .detail-table table {
+        display: block;
+        width: 100%;
+        margin: 5px 0 10px;
+        font-size: 12px;
+        border-collapse: collapse;
+    }
+
+    .detail-table thead {
+        display: block;
+        border-top: solid 1px #dbdbdb;
+        border-right: solid 1px #dbdbdb;
+        border-left: solid 1px #dbdbdb;
+    }
+
+    .detail-table tbody {
+        display: block;
+        max-height: 300px;
+        overflow-y: auto;
+        border: solid 1px #dbdbdb;
+    }
+
+    .detail-table tbody tr td:first-child {
+        border-right: solid 1px #dbdbdb;
+    }
+
+    .lrchart-header .table-assist {
+        margin-bottom: 0;
+    }
+
+    .lrchart-header .table-toolbar {
+        margin-top: 0;
+    }
+    .lrchart-header .optional-actions {
+        margin-bottom: 0;
+    }
+}
