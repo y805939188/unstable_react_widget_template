@@ -1,16 +1,17 @@
 import React from 'react';
-const Component1: React.FC<any> = (props) => {
+import './index.less';
+const MyWidget: React.FC<any> = (props) => {
   return <div
     style={{
       fontSize: 24,
       width: 100,
       height: 100,
-      backgroundColor: 'aquamarine',
+      backgroundColor: '#fff',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
     }}
-  >测试外部通讯: {props.number}</div>
+  >测试: {props.number}</div>
 }
 
-export default Component1;
+export default MyWidget;

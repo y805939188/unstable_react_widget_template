@@ -19,5 +19,5 @@
     "baseUrl": "./src"
   },
   "include": ["src", "typings"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dev-build"],
 }
