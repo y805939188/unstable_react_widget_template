@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MyWidget from '../../dev-build';
+import './index.less';
+
 const Test: React.FC<any> = (props) => {
   return (
     <div>
-      <MyWidget number={666} />
+      <div id="test-wrapper">Hello Widget!!</div>
+      <MyWidget />
     </div>
   )
 }

@@ -15,6 +15,7 @@ if (!name && isProd) {
 if (isProd) console.log(chalk.green('这里的name是', name));
 
 const buildConfig = {
+  devtool: !isProd ? 'cheap-module-eval-source-map' : 'source-map',
   mode: process.env.NODE_ENV || 'production',
   entry: `${originPath}/src/index.tsx`,
   output: {
@@ -52,6 +53,10 @@ const buildConfig = {
         },
       },
     ]
+  },
+  externals: {
+    'react': 'react',
+    'react-dom': 'ReactDOM',
   },
   plugins: [
     new CleanWebpackPlugin({
