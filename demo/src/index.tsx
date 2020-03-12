@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MyWidget from '../../dev-build';
-import './index.less';
+import './index.<%= style%>';
 
 const Test: React.FC<any> = (props) => {
   return (
@@ -15,6 +15,3 @@ ReactDOM.render(
   <Test />,
   document.querySelector('#react'),
 )
-
-
-// tsc ./src/index.tsx --esModuleInterop  --emitDeclarationOnly --declaration --jsx react 
