@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 import { piePatternSrc, bgPatternSrc } from './echarts.img';
+import './index.<%= style%>';
 
 const piePatternImg = new Image();
 piePatternImg.src = piePatternSrc;

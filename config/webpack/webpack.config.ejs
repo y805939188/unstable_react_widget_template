@@ -35,7 +35,7 @@ const getStyleConfig = () => {
       }
     ],
   });
-<% } else if (style === 'stylus') { %>
+<% } else if (style === 'styl') { %>
   return ({
     test: /\.styl$/,
     include: [path.join(originPath, 'src'), path.join(demoPath, 'src')],
@@ -79,7 +79,7 @@ module.exports = {
           }
         ]
       },
-      <% if (style) { %>
+      <% if (style !== 'css') { %>
       getStyleConfig(),
       <% } %>
       {

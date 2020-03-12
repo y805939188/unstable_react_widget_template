@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
-import './index.less';
+import './index.<%= style%>';
 
 const data = [
   { x: "这是", y: 320 },
