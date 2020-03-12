@@ -20,7 +20,7 @@ const getStyleConfig = () => {
       }
     ],
   });
-<% } else if (style === 'sass') { %>
+<% } else if (style === 'scss') { %>
   return ({
     test: /\.(sass|scss)$/,
     include: [path.join(originPath, 'src'), path.join(demoPath, 'src')],
