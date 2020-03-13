@@ -4,7 +4,7 @@ const demoPath = `${originPath}/demo`;
 
 /** 如果没有使用less、sass、stylus的话这里会是个空函数 */
 const getStyleConfig = () => {
-
+<% if (style === 'less') { %>
   return ({
     test: /\.less/,
     include: [path.join(originPath, 'src'), path.join(demoPath, 'src')],
@@ -20,7 +20,37 @@ const getStyleConfig = () => {
       }
     ],
   });
-
+<% } else if (style === 'scss') { %>
+  return ({
+    test: /\.(sass|scss)$/,
+    include: [path.join(originPath, 'src'), path.join(demoPath, 'src')],
+    use: [
+      { loader: 'style-loader' },
+      {
+        loader: 'css-loader',
+        options : { modules: true }
+      },
+      {
+        loader: 'sass-loader',
+      }
+    ],
+  });
+<% } else if (style === 'styl') { %>
+  return ({
+    test: /\.styl$/,
+    include: [path.join(originPath, 'src'), path.join(demoPath, 'src')],
+    use: [
+      { loader: 'style-loader' },
+      {
+        loader: 'css-loader',
+        options : { modules: true }
+      },
+      {
+        loader: 'stylus-loader',
+      }
+    ],
+  });
+<% } %>
 }
 
 module.exports = {
@@ -49,39 +79,9 @@ module.exports = {
           }
         ]
       },
-      
+      <% if (style !== 'css') { %>
       getStyleConfig(),
-
-      {
-        test: /\.(sass|scss)$/,
-        include: [path.join(originPath, 'src'), path.join(demoPath, 'src')],
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options : { modules: true }
-          },
-          {
-            loader: 'sass-loader',
-          }
-        ],
-      },
-
-      {
-        test: /\.styl$/,
-        include: [path.join(originPath, 'src'), path.join(demoPath, 'src')],
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options : { modules: true }
-          },
-          {
-            loader: 'stylus-loader',
-          }
-        ],
-      },
-      
+      <% } %>
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'url-loader',
@@ -92,4 +92,5 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".json"],
   },
+  plugins: [],
 };

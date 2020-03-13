@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getModelPreview } from './service';
 import ModelPreview from './components/train-process/index';
-import './index.scss';
+import './index.<%= style%>';
 
 const fakePrn = 'TaskController/PicoTraining-10001684-10001684-29d882.model';
 const fakeWorkspaceId = 1;

@@ -7,7 +7,7 @@ import 'echarts/lib/component/legend';
 import Tabs from './training-process-tab';
 import loglossGraph from './conf/logloss';
 import aucGraph from './conf/auc';
-import './index.scss';
+import './index.<%= style%>';
 
 interface IProps {
 	data: { [prop: string]: any };

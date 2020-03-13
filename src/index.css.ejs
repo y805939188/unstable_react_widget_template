@@ -1,0 +1,36 @@
+<% if (style === 'less') { %>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:global {
+
+}
+
+<% } else if (style === 'scss') { %>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:global {
+
+}
+
+<% } else if (style === 'styl') { %>
+:global
+  *
+    margin: 0;
+    padding: 0;
+
+
+
+<% } else if (style === 'css') { %>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+<% } %>
+  
