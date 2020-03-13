@@ -1,0 +1,33 @@
+<% if (style === 'less') { %>
+:global {
+  .preview-wrapper {
+    background-color: #191b2b;
+    height: 100%;
+    width: 100%;
+  }
+}
+  
+<% } else if (style === 'scss') { %>
+:global {
+  .preview-wrapper {
+    background-color: #191b2b;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+<% } else if (style === 'styl') { %>
+:global
+  .preview-wrapper
+    background-color: #191b2b;
+    height: 100%;
+    width: 100%;
+  
+<% } else if (style === 'css') { %>
+.preview-wrapper {
+  background-color: #191b2b;
+  height: 100%;
+  width: 100%;
+}
+<% } %>
+  

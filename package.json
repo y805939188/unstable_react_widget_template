@@ -73,7 +73,7 @@
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
     "react-use": "^13.27.0",
-    "react-vue-micro-frame": "^0.1.4"
+    "react-vue-micro-frame": "^0.1.5"
   },
   "keywords": []
 }
