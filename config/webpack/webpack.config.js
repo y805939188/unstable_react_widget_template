@@ -51,6 +51,36 @@ module.exports = {
       },
       
       getStyleConfig(),
+
+      {
+        test: /\.(sass|scss)$/,
+        include: [path.join(originPath, 'src'), path.join(demoPath, 'src')],
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options : { modules: true }
+          },
+          {
+            loader: 'sass-loader',
+          }
+        ],
+      },
+
+      {
+        test: /\.styl$/,
+        include: [path.join(originPath, 'src'), path.join(demoPath, 'src')],
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options : { modules: true }
+          },
+          {
+            loader: 'stylus-loader',
+          }
+        ],
+      },
       
       {
         test: /\.(png|jpg|gif|svg)$/,
