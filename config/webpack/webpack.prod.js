@@ -48,6 +48,7 @@ const buildConfig = {
               ['@babel/plugin-transform-runtime', { corejs: 3 }],
               '@babel/plugin-syntax-dynamic-import',
               '@babel/plugin-proposal-optional-chaining',
+              '@babel/plugin-proposal-class-properties',
             ],
           }
         },
