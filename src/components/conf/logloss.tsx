@@ -1,4 +1,3 @@
-import { EChartOption } from 'echarts';
 import { xAxisStyle, yAxisStyle } from './axis';
 
 // 这特么Echarts的类型怎么写啊!!!!!!!
@@ -20,15 +19,15 @@ const options: { [prop: string]: any } = {
 		data: [{ name: '训练logloss', icon: 'rect' }],
 	},
 	xAxis: {
-		...xAxisStyle,
 		type: 'category',
 		name: 'iterations',
+		...xAxisStyle,
 		boundaryGap: false,
 	},
 	yAxis: {
-		...yAxisStyle,
 		type: 'value',
 		name: 'logloss',
+		...yAxisStyle,
 		nameGap: 60,
 		boundaryGap: [0, '100%'],
 	},

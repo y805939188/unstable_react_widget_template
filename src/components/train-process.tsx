@@ -1,18 +1,13 @@
 import React, { createRef, RefObject } from 'react';
-// import echarts, { EChartOption } from 'echarts';
-import Echarts, { ReactEchartsPropsTypes } from 'echarts-for-react';
-import echarts from 'echarts/lib/echarts';
-//导入折线图
-import 'echarts/lib/chart/line'
-// 引入提示框和标题组件
-import 'echarts/lib/component/tooltip'
-import 'echarts/lib/component/title'
-import 'echarts/lib/component/legend'
-// import 'echarts/lib/component/markPoint'
-import Tabs from './training-process-tab.jsx';
-import './css/training-process.css';
+import echarts, { ECharts, EChartOption } from 'echarts/lib/echarts';
+import 'echarts/lib/chart/line';
+import 'echarts/lib/component/tooltip';
+import 'echarts/lib/component/title';
+import 'echarts/lib/component/legend';
+import Tabs from './training-process-tab';
 import loglossGraph from './conf/logloss';
-import aucGraph from './conf/auc.js';
+import aucGraph from './conf/auc';
+import './css/training-process.css';
 
 interface IProps {
 	data: { [prop: string]: any };
@@ -21,10 +16,10 @@ interface IProps {
 interface IState {
 	tabStatus: 'logloss' | 'auc';
 	xName: string;
-	echartsOptions: ReactEchartsPropsTypes['option'] | null;
+	echartsOptions: EChartOption | null;
 }
 
-interface IGraphItemsProps {
+export interface IGraphItemsProps {
 	name: string;
 	value: 'logloss' | 'auc';
 }
@@ -32,9 +27,9 @@ interface IGraphItemsProps {
 export default class TrainProcess extends React.Component<IProps, IState> {
 	private graphItems: IGraphItemsProps[];
 	private oDivRef: RefObject<HTMLDivElement> = createRef<HTMLDivElement>();
+	private graph: ECharts | null = null;
 	constructor(props: IProps) {
 		super(props);
-
 		const algorithmName = this.props.data?.algorithmName || '';
 		const xName = (algorithmName === 'gbdt' || algorithmName === 'HE-TreeNet') ? '树的棵数' : '训练迭代次数';
 		this.state = { tabStatus: 'logloss', echartsOptions: null, xName };
@@ -45,16 +40,26 @@ export default class TrainProcess extends React.Component<IProps, IState> {
 		];
 	}
 
-	componentDidMount() {
+	componentDidMount = () => {
 		const graphData = this.parseLoglossData();
 		const oDiv = this.oDivRef.current;
-		// if (graphData) this.setState({ echartsOptions: graphData });
 		if (graphData && oDiv) {
-			const graph = echarts.init(oDiv);
-			graph.setOption(graphData);
+			this.graph = echarts.init(oDiv);
+			this.graph.setOption(graphData);
+			window.addEventListener('resize', this.onResize);
 		}
-		// window.addEv
 	}
+
+	componentDidUpdate = () => {
+		this.graph?.setOption(this.state.echartsOptions as any);
+	}
+
+	componentWillUnmount = () => {
+		window.removeEventListener('resize', this.onResize);
+	}
+
+	onResize = () => this.graph?.resize();
+
 	onTabChange = () => {
 		const { tabStatus } = this.state;
 		const graphData = tabStatus === 'logloss' ? this.parseAucData() : this.parseLoglossData();
@@ -149,39 +154,40 @@ export default class TrainProcess extends React.Component<IProps, IState> {
 		return aucGraph || null;
 	}
 	render() {
-		const result = this.props.data;
-		const { echartsOptions } = this.state;
+		const {
+			train, validate, validateLogloss,
+			trainTime, iterations, trainLogloss,
+		} = this.props.data;
 		return (
 			<div className="visualization-model-outside-container visualization-model-container">
-				<Tabs items={this.graphItems} padding="16px 0px 0px 18px" onTabChange={this.onTabChange} />
+				<Tabs items={this.graphItems} onTabChange={this.onTabChange} />
 				<div className="visualization-model-row">
 					<div ref={this.oDivRef} className="visualization-graph" />
-					{/* {echartsOptions && <Echarts className={"visualization-graph"} option={echartsOptions} />} */}
 					<div className="visualization-rightTable">
 						<table>
 							<tbody>
 								<tr>
 									<td>训练用时</td>
-									<td>{result.trainTime || '暂无'}</td>
+									<td>{trainTime || '暂无'}</td>
 								</tr>
-								<tr><td>{this.state.xName}</td><td>{result.iterations || '暂无'}</td></tr>
+								<tr><td>{this.state.xName}</td><td>{iterations || '暂无'}</td></tr>
 								<tr><td>{this.props.data.algorithmName === 'svm' ? '训练Hingeloss' : '训练Logloss'}</td>
-									<td>{result.trainLogloss === 'NaN' ? '暂无' : result.trainLogloss}</td>
+									<td>{trainLogloss === 'NaN' ? '暂无' : trainLogloss}</td>
 								</tr>
-								{result.validateLogloss === 'NaN' ? null : (
+								{validateLogloss === 'NaN' ? null : (
 									<tr>
 										<td>{this.props.data.algorithmName === 'svm' ? '验证Hingeloss' : '验证Logloss'}</td>
-										<td>{result.validateLogloss === 'NaN' ? '暂无' : result.validateLogloss}</td>
+										<td>{validateLogloss === 'NaN' ? '暂无' : validateLogloss}</td>
 									</tr>
 								)}
 								<tr>
 									<td>训练AUC</td>
-									<td>{result.train === 'NaN' ? '暂无' : result.train}</td>
+									<td>{train === 'NaN' ? '暂无' : train}</td>
 								</tr>
-								{result.validate === 'NaN' ? null : (
+								{validate === 'NaN' ? null : (
 									<tr>
 										<td>验证AUC</td>
-										<td>{result.validate === 'NaN' ? '暂无' : result.validate}</td>
+										<td>{validate === 'NaN' ? '暂无' : validate}</td>
 									</tr>
 								)}
 							</tbody>
