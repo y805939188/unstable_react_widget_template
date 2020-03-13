@@ -46,14 +46,11 @@ const devConfig = {
     ]
   },
   devServer: {
-    // open: true,
     port: 3190,
     contentBase: `${demoPath}`,
     historyApiFallback: true,
     publicPath,
     proxy: [{
-      // target: 'http://gateway.371cdh.autoui.4pd.io',
-      // target: 'http://gateway.380cdh.autoui.4pd.io/',
       target: 'http://172.27.128.150:40121/',
       changeOrigin: true,
       context: ['/'],
@@ -63,19 +60,16 @@ const devConfig = {
     }],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(demoPath, 'index.html'),
-    }),
+    new HtmlWebpackPlugin({ template: path.join(demoPath, 'index.html') }),
     new OpenBrowserPlugin({ url: 'http://localhost:3190/board/#/new-widget' }),
   ],
   resolve: {
-    // extensions: ['.ts', '.tsx', '.jsx', '.js'],
     alias: {
-      src: path.resolve(__dirname, 'src'),
-      common: path.resolve(__dirname, 'src', 'common'),
-      app: path.resolve(__dirname, 'src', 'app'),
-      component: path.resolve(__dirname, 'src', 'component'),
-      resource: path.resolve(__dirname, 'src', 'resource'),
+      src: path.resolve(demoPath, 'src'),
+      common: path.resolve(demoPath, 'src', 'common'),
+      app: path.resolve(demoPath, 'src', 'app'),
+      component: path.resolve(demoPath, 'src', 'component'),
+      resource: path.resolve(demoPath, 'src', 'resource'),
     },
   },
 };

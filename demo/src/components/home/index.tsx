@@ -13,6 +13,7 @@ interface IProps extends RouteComponentProps<{}> {
   [propName: string]: any;
 }
 
+const toNewWidget = () => (window.location.hash = '/new-widget');
 const toSearch = () => (window.location.hash = '/search');
 const toPreview = () => (window.location.hash = '/preview');
 const defaultIndex = ['#/preview', '#/search'].indexOf(window.location.hash);
@@ -35,9 +36,9 @@ const Board: React.FC<IProps> = (props) => {
             <Icon type="pie-chart" />
             <span>首页</span>
           </Menu.Item>
-          <Menu.Item key="2" onClick={toSearch}>
+          <Menu.Item key="2" onClick={toNewWidget}>
             <Icon type="desktop" />
-            <span>搜索</span>
+            <span>开发中的 Widget</span>
           </Menu.Item>
           <Menu.Item key="3">
             <Icon type="inbox" />
@@ -69,7 +70,7 @@ const Board: React.FC<IProps> = (props) => {
           <Redirect exact from="/" to="/preview" />
           <Route path="/preview" component={Preview} />
           <Route path="/new-widget" component={Widget} />
-          <Route path="/search" component={Search} />
+          {/* <Route path="/search" component={Search} /> */}
           <Route path="/detail/:url" component={Detail} />
         </Switch>
       </div>

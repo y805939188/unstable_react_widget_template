@@ -101,7 +101,7 @@ const Preview: React.FC<any> = (props) => {
     window.open(`/board/#/detail/${encodeURIComponent(JSON.stringify(widget))}`)
   );
   return (
-    <>
+    <div className="preview-wrapper">
       <div className="content-substance">
         <div className="substance-recommend">
           {getRecommendComponent(result.recommend, handleClick)}
@@ -114,7 +114,7 @@ const Preview: React.FC<any> = (props) => {
       <div className="content-downloads">
         {getDownloadsComponent(result.downloads, handleClick)}
       </div>
-    </>
+    </div>
   )
 }
 

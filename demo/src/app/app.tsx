@@ -7,5 +7,5 @@ ReactDOM.render(
   <div id="pd-board-wrapper">
     <RootRouter />
   </div>,
-  document.querySelector('#app'),
+  document.querySelector('#react'),
 );

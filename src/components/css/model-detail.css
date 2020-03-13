@@ -1,0 +1,231 @@
+.visualization-title {
+    display: inline-block;
+    font-size: 18px;
+    color: #212121;
+    margin-left: 30px;
+    max-width: 288px;
+}
+.visualization-header {
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    font-size: 16px;
+    color: #212121;
+    padding-left: 30px;
+    line-height: 40px;
+    background-color: #f4f4f4;
+}
+.modelPreviewPage {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: scroll;
+    padding-left: 16px;
+}
+.pageContainer {
+    width: 1280px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+.modelPreviewPage .top {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    font-size: 18px;
+    border-bottom: 1px solid #e9e9e9;
+    box-shadow: 0px 0px 14px #D7EFFB;
+    z-index: 3;
+}
+.modelPreviewPage .backbt {
+    float: right;
+    margin-top: 15px;
+    margin-right: 50px;
+}
+.modelPreviewPage .modelInfo {
+    display: inline-block;    /*float: right;*/
+    position: absolute;
+    right: 200px;
+}
+.modelIcon {
+    width: 60px;
+    height: 100%;
+    background-color: #16C4C6;
+    float: left;
+    background-image: url(model/modelDetail/img/modelview.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #16C4C6;
+}
+.modelName {
+    float: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 200px;
+}
+.modelsplit {
+    height: 40px;
+    width: 100%;
+    background-color: #f4f4f4;
+    font-size: 16px;
+    color: #757575;
+    line-height: 40px;
+    text-indent: 72px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.trainingtitle {
+    margin: 0 24px;
+    font-size: 16px;
+    color: #212121;
+}
+.datadetail {
+    padding: 0 70px;
+}
+.detailtitle {
+    margin: 27px 0 24px 24px;
+    font-size: 16px;
+    color: #212121;
+}
+.trainingtable {
+    width: 1070px;
+    margin: 0 auto;
+    margin-top: 40px;    /*padding-bottom: 50px;*/
+    padding-bottom: 40px;
+}
+.iarrowup, .iarrowdown {
+    float: right;
+    margin-right: 72px;
+    margin-top: 17px;
+    width: 20px;
+    height: 10px;
+}
+
+/*icon begin*/
+.visualization-info {
+    font-size: 12px;
+    color: #757575;
+    display: inline-block;
+    position: relative;
+    margin-right: 36px;
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.iplanname, .icreatename, .itime {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+}
+.iclose {
+    width: 22px;
+    height: 22px;
+    background: url(model/img/close.svg) no-repeat;
+    float: right;
+    cursor: pointer;
+    margin-right: -19px;
+}
+.iplanname {
+    width: 14px;
+    height: 22px;
+    background: url(model/img/p_plan.svg) no-repeat;
+    top: 5px;
+    margin-left: 70px;
+}
+.icreatename {
+    width: 17px;
+    height: 22px;
+    background: url(model/img/owner1.svg) no-repeat;
+    top: 7px;
+}
+.itime {
+    width: 19px;
+    height: 22px;
+    background: url(model/img/time.svg) no-repeat;
+    top: 7px;
+}
+.iarrowup {
+    background: url(model/img/arrowup.svg) no-repeat;
+}
+.iarrowdown {
+    background: url(model/img/arrowdown.svg) no-repeat;
+}
+.search-area {
+    float: left;
+    width: 205px;
+    max-height: 1864px;
+    text-align: center;
+}
+.search-area .search-areaContainer {
+    display: inline-block;
+    margin-top: 8px;
+}
+.search-area ul {
+    margin-top: 16px;
+}
+.search-area .reportItem {
+    line-height: 30px;
+    cursor: default;
+    background-color: #fff;
+    transition: all .3s;
+}
+.search-area .reportItem:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+.search-area .reportItem.active {
+    background-color: #dff5ec;
+}
+.graphtitle {
+    z-index: 2;
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 1px solid #d6d6d6;
+    font-size: 16px;
+    color: #212121;
+    padding-left: 50px;
+    position: relative;
+}
+.deletebtn {
+    position: absolute;
+    top: 50%;
+    right: 67px;
+    transform: translateY(-50%);
+}
+.featureDetailGraph {
+    overflow: hidden;
+    margin-top: -20px;
+    position: relative;
+    min-height: 1000px;
+    border-left: 1px solid #d6d6d6;
+}
+.noReport {
+    font-size: 14px;
+    color: #bdbdbd;
+}
+.bigSearch {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+}
+.bigSearchIcon {
+    width: 100px;
+    height: 78px;
+    background: url(model/img/search2.svg) no-repeat;
+    display: inline-block;
+}
+.bigSearchTxt {
+    font-size: 18px;
+    color: #bdbdbd;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}

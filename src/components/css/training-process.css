@@ -1,0 +1,25 @@
+.trainbox {
+    position: relative;
+    width: 1071px;
+    margin: 0 auto;
+    height: 397px;
+}
+.visualization-graph {
+    width: calc(100% - 230px);
+    height: 276px;
+    display: inline-block;
+}
+.visualization-error{
+    margin: 0 auto;
+    width: 100px;
+    color: #bdbdbd;
+    margin-top: 40px;
+}
+
+.visualization-hintNaN {
+    position: absolute;
+    top: -25px;
+    left: 651px;
+    color: #ffc37d;
+    font-size: 14px;
+}
