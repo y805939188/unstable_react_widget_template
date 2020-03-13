@@ -1,8 +1,7 @@
-import React, { useState, useCallback, useEffect } from 'react';
-// import useMount from 'react-use/esm/useMount';
-import VueFrame, { ReactFrame } from 'react-vue-micro-frame';
+import React, { useState, useEffect } from 'react';
+import { ReactFrame } from 'react-vue-micro-frame';
 import data from './mock-data';
-import './index.less';
+import './index.<%= style%>';
 
 interface IState {
   recommend: any[];

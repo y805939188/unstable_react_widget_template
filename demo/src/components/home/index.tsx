@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Switch, Redirect, RouteComponentProps } from 'react-router-dom';
-// import useMount from 'react-use/esm/useMount';
 import logo from '../../resource/img/elfjs2.png';
-import { Menu, Icon, Tooltip } from 'antd';
+import { Menu, Icon } from 'antd';
 import Preview from '../preview';
 import Detail from '../detail';
-import Search from '../search';
+// import Search from '../search';
 import Widget from '../widget';
-import './index.less';
+import './index.<%= style%>';
 
 interface IProps extends RouteComponentProps<{}> {
   [propName: string]: any;

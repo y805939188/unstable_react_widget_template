@@ -3,7 +3,7 @@ import { RouteComponentProps } from 'react-router-dom';
 // import useMount from 'react-use/esm/useMount';
 import { ReactFrame } from 'react-vue-micro-frame';
 
-import './index.less';
+import './index.<%= style%>';
 
 interface IProps extends RouteComponentProps<{ url: any }> {}
 

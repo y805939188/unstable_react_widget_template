@@ -2,7 +2,7 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 // @ts-ignore
 import Widget from '../../../../dev-build';
-import './index.less';
+import './index.<%= style%>';
 
 interface IProps extends RouteComponentProps<{ url: any }> {}
 const WidgetBoard: React.FC<IProps> = (props) => {
