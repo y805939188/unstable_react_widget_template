@@ -6,65 +6,58 @@ const defaultTaskId = "1314";
 
 const data = [
   {
-    url: 'http://localhost:20522/react-model-structure.js',
-    name: 'react-model-structure',
+    url: 'http://172.27.128.108:31633/components/widgets/area-widget/index.js',
+    name: 'widget-1',
     type: 'recommend',
+  },
+  {
+    url: 'http://172.27.128.108:31633/components/widgets/polar/index.js',
+    name: 'widget2',
+    type: 'quality',
+    defaultProps: {},
+  },
+  {
+    url: 'http://172.27.128.108:31633/components/widgets/polar2/index.js',
+    name: 'widget3',
+    type: 'quality',
+    defaultProps: {},
+  },
+  {
+    url: 'http://172.27.128.108:31633/components/widgets/pie/index.js',
+    name: 'widget4',
+    type: 'quality',
+    defaultProps: {},
+  },
+  {
+    url: 'http://172.27.128.108:31633/components/widgets/pie2/index.js',
+    name: 'widget5',
+    type: 'quality',
+    defaultProps: {},
+  },
+  {
+    url: 'http://172.27.128.108:31633/components/widgets/sunburst/index.js',
+    name: 'widget6',
+    type: 'ranking',
+    defaultProps: {},
+  },
+  {
+    url: 'http://172.27.128.108:31633/components/widgets/radam/index.js',
+    name: 'widget7',
+    type: 'ranking',
+    defaultProps: {},
+  },
+  {
+    url: 'http://172.27.128.108:31633/components/react-model-structure.js',
+    name: 'react-model-structure',
+    type: 'downloads',
     defaultProps: { workspaceId: 1, prn: 'TaskController/PicoTraining-10001544-10001544-94f5cb.model' },
   },
-  {
-    url: 'http://localhost:20522/reactComponent3.umd.js',
-    name: 'reactComponent3',
-    type: 'quality',
-    defaultProps: {},
-  },
-  {
-    url: 'http://localhost:20522/reactComponent4.umd.js',
-    name: 'reactComponent4',
-    type: 'quality',
-    defaultProps: {},
-  },
-  {
-    url: 'http://localhost:20522/reactComponent5.umd.js',
-    name: 'reactComponent5',
-    type: 'quality',
-    defaultProps: {},
-  },
-  {
-    url: 'http://localhost:20522/reactComponent6.umd.js',
-    name: 'reactComponent6',
-    type: 'quality',
-    defaultProps: {},
-  },
-  {
-    url: 'http://localhost:20522/reactComponent7.umd.js',
-    name: 'reactComponent7',
-    type: 'ranking',
-    defaultProps: {},
-  },
-  {
-    url: 'http://localhost:20522/reactComponent1.umd.js',
-    name: 'reactComponent1',
-    type: 'ranking',
-    defaultProps: {},
-  },
-  {
-    url: 'http://localhost:20522/reactComponent0.umd.js',
-    name: 'reactComponent0',
-    type: 'downloads',
-    defaultProps: { taskId: "1314", data: defaultData, stop: true },
-  },
   // {
-  //   url: 'http://localhost:20522/react-model-structure.js',
+  //   url: 'http://172.27.128.108:13190/reactComponent0.umd.js',
   //   name: 'reactComponent0',
   //   type: 'downloads',
-  //   defaultProps: { workspaceId: 1, prn: 'TaskController/PicoTraining-10001544-10001544-94f5cb.model' },
+  //   defaultProps: { taskId: "22742", data: defaultData, stop: true },
   // }
-  // {
-  //   url: 'http://localhost:20522/react-model-structure.js',
-  //   name: 'react-model-structure',
-  //   type: 'downloads',
-  //   defaultProps: { workspaceId: 1, prn: 'TaskController/PicoTraining-10001544-10001544-94f5cb.model' },
-  // },
 ];
 
 export default data;

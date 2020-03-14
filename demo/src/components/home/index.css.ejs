@@ -10,8 +10,10 @@
   }
   #board-content-wrapper {
     .common-background-color {
-      background-color: #212538;
-      transition: all 0.5s;
+      // background-color: #212538;
+      background-color: #fff;
+      box-shadow: 0px 0px 20px 2px aliceblue;
+      transition: all 0.5;
       overflow: hidden;
     }
     .common-background-color:hover {
@@ -37,6 +39,7 @@
     }
     .board-content-right {
       flex: 1;
+      overflow: auto;
       .content-header {
         display: flex;
         justify-content: flex-start;
@@ -57,9 +60,12 @@
       .content-substance {
         display: flex;
         height: 30%;
+        width: 95%;
+        margin: auto;
         .substance-recommend {
           flex: 65%;
           display: flex;
+          padding: 15px;
           .recommend-1 {
             flex: 1;
             margin: 10px;
@@ -77,6 +83,7 @@
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
+          padding: 15px;
           .high-quality-wrapper {
             flex: 1;
             width: calc(50% - 10px);
@@ -100,8 +107,11 @@
       .content-ranking {
         display: flex;
         height: 30%;
+        width: 95%;
+        margin: auto;
         .ranking-1 {
           flex: 65%;
+          padding: 15px;
           .ranking-content-1 {
             height: calc(100% - 20px);
             width: calc(100% - 20px);
@@ -113,6 +123,7 @@
         }
         .ranking-2 {
           flex: 35%;
+          padding: 15px;
           .ranking-content-2 {
             height: calc(100% - 20px);
             width: calc(100% - 20px);
@@ -123,6 +134,9 @@
       .content-downloads {
         height: calc(40% - 38px);
         padding: 10px;
+        width: 95%;
+        margin: auto;
+        padding: 15px;
         .downloads-content {
           height: 100%;
           width: 100%;
@@ -131,8 +145,10 @@
     }
   }
 }
+    
   
-
+  
+    
 <% } else if (style === 'scss') { %>
 :global {
   .ant-modal-content {
@@ -145,8 +161,10 @@
   }
   #board-content-wrapper {
     .common-background-color {
-      background-color: #212538;
-      transition: all 0.5s;
+      // background-color: #212538;
+      background-color: #fff;
+      box-shadow: 0px 0px 20px 2px aliceblue;
+      transition: all 0.5;
       overflow: hidden;
     }
     .common-background-color:hover {
@@ -172,6 +190,7 @@
     }
     .board-content-right {
       flex: 1;
+      overflow: auto;
       .content-header {
         display: flex;
         justify-content: flex-start;
@@ -192,9 +211,12 @@
       .content-substance {
         display: flex;
         height: 30%;
+        width: 95%;
+        margin: auto;
         .substance-recommend {
           flex: 65%;
           display: flex;
+          padding: 15px;
           .recommend-1 {
             flex: 1;
             margin: 10px;
@@ -212,6 +234,7 @@
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
+          padding: 15px;
           .high-quality-wrapper {
             flex: 1;
             width: calc(50% - 10px);
@@ -235,8 +258,11 @@
       .content-ranking {
         display: flex;
         height: 30%;
+        width: 95%;
+        margin: auto;
         .ranking-1 {
           flex: 65%;
+          padding: 15px;
           .ranking-content-1 {
             height: calc(100% - 20px);
             width: calc(100% - 20px);
@@ -248,6 +274,7 @@
         }
         .ranking-2 {
           flex: 35%;
+          padding: 15px;
           .ranking-content-2 {
             height: calc(100% - 20px);
             width: calc(100% - 20px);
@@ -258,6 +285,9 @@
       .content-downloads {
         height: calc(40% - 38px);
         padding: 10px;
+        width: 95%;
+        margin: auto;
+        padding: 15px;
         .downloads-content {
           height: 100%;
           width: 100%;
@@ -266,43 +296,46 @@
     }
   }
 }
-  
 <% } else if (style === 'styl') { %>
-:global
+:global 
   .ant-modal-content
     height: 750px;
     width: 800px;
     background-color: #212538 !important;
-    .ant-modal-body
+    .ant-modal-body 
       height: 80%;
-
-  #board-content-wrapper
-    .common-background-color
-      background-color: #212538;
-      transition: all 0.5s;
+    
+  
+  #board-content-wrapper 
+    .common-background-color 
+      // background-color: #212538;
+      background-color: #fff;
+      box-shadow: 0px 0px 20px 2px aliceblue;
+      transition: all 0.5;
       overflow: hidden;
-
-    .common-background-color:hover
+    
+    .common-background-color:hover 
       box-shadow: 0px 0px 20px 0px #888888;
-
+    
     display: flex;
     height: 100vh;
     width: 100%;
-    .board-content-left
-      .ant-menu
+    .board-content-left 
+      .ant-menu 
         height: 100%;
         padding-top: 30px;
         background-color: #080e1c;
-        & > img
+        & > img 
           width: 90%;
           margin-left: 5px;
           margin-top: -5px;
-
-        & > li:nth-of-type(1)
+        
+        & > li:nth-of-type(1) 
           margin-top: 30px;
-
-    .board-content-right 
+        
+    .board-content-right
       flex: 1;
+      overflow: auto;
       .content-header 
         display: flex;
         justify-content: flex-start;
@@ -314,63 +347,72 @@
             margin: 0 10px 0 10px;
             color: #fff;
           
+        
         .header-user-info 
           color: #fff;
           font-size: 14px;
+        
       
-      .content-substance
+      .content-substance 
         display: flex;
         height: 30%;
-        .substance-recommend
+        width: 95%;
+        margin: auto;
+        .substance-recommend 
           flex: 65%;
           display: flex;
-          .recommend-1
+          padding: 15px;
+          .recommend-1 
             flex: 1;
             margin: 10px;
-            .recommend-1-content
+            .recommend-1-content 
               height: 100%;
-          
-          .recommend-2
+            
+          .recommend-2 
             flex: 1;
             margin: 10px;
-        
-        .substance-high-quality 
+          
+        .substance-high-quality
           flex: 35%;
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
-          .high-quality-wrapper 
+          padding: 15px;
+          .high-quality-wrapper
             flex: 1;
             width: calc(50% - 10px);
             min-width: calc(50% - 10px);
             max-width: calc(50% - 10px);
             height: calc(50% - 10px);
             margin: 5px;
-            .high-quality-content 
+            .high-quality-content
               position: relative;
               height: 100%;
-              & > div 
+              & > div
                 position: absolute;
                 top: 50%;
                 width: 100%;
                 transform: translateY(-50%);
-              
       
-      .content-ranking
+      .content-ranking 
         display: flex;
         height: 30%;
-        .ranking-1
+        width: 95%;
+        margin: auto;
+        .ranking-1 
           flex: 65%;
-          .ranking-content-1
+          padding: 15px;
+          .ranking-content-1 
             height: calc(100% - 20px);
             width: calc(100% - 20px);
             margin: 10px;
-            & > div
+            & > div 
               height: 100%;
-
-        .ranking-2
+            
+        .ranking-2 
           flex: 35%;
-          .ranking-content-2
+          padding: 15px;
+          .ranking-content-2 
             height: calc(100% - 20px);
             width: calc(100% - 20px);
             margin: 10px;
@@ -378,12 +420,13 @@
       .content-downloads
         height: calc(40% - 38px);
         padding: 10px;
+        width: 95%;
+        margin: auto;
+        padding: 15px;
         .downloads-content
           height: 100%;
           width: 100%;
-  
 <% } else if (style === 'css') { %>
-
 .ant-modal-content {
   height: 750px;
   width: 800px;
@@ -398,8 +441,9 @@
   width: 100%;
 }
 #board-content-wrapper .common-background-color {
-  background-color: #212538;
-  transition: all 0.5s;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 2px aliceblue;
+  transition: all 0.5;
   overflow: hidden;
 }
 #board-content-wrapper .common-background-color:hover {
@@ -420,6 +464,7 @@
 }
 #board-content-wrapper .board-content-right {
   flex: 1;
+  overflow: auto;
 }
 #board-content-wrapper .board-content-right .content-header {
   display: flex;
@@ -439,10 +484,13 @@
 #board-content-wrapper .board-content-right .content-substance {
   display: flex;
   height: 30%;
+  width: 95%;
+  margin: auto;
 }
 #board-content-wrapper .board-content-right .content-substance .substance-recommend {
   flex: 65%;
   display: flex;
+  padding: 15px;
 }
 #board-content-wrapper .board-content-right .content-substance .substance-recommend .recommend-1 {
   flex: 1;
@@ -460,6 +508,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 15px;
 }
 #board-content-wrapper .board-content-right .content-substance .substance-high-quality .high-quality-wrapper {
   flex: 1;
@@ -482,9 +531,12 @@
 #board-content-wrapper .board-content-right .content-ranking {
   display: flex;
   height: 30%;
+  width: 95%;
+  margin: auto;
 }
 #board-content-wrapper .board-content-right .content-ranking .ranking-1 {
   flex: 65%;
+  padding: 15px;
 }
 #board-content-wrapper .board-content-right .content-ranking .ranking-1 .ranking-content-1 {
   height: calc(80%);
@@ -496,6 +548,7 @@
 }
 #board-content-wrapper .board-content-right .content-ranking .ranking-2 {
   flex: 35%;
+  padding: 15px;
 }
 #board-content-wrapper .board-content-right .content-ranking .ranking-2 .ranking-content-2 {
   height: calc(80%);
@@ -505,6 +558,9 @@
 #board-content-wrapper .board-content-right .content-downloads {
   height: calc(2%);
   padding: 10px;
+  width: 95%;
+  margin: auto;
+  padding: 15px;
 }
 #board-content-wrapper .board-content-right .content-downloads .downloads-content {
   height: 100%;
