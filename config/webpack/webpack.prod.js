@@ -1,3 +1,4 @@
+const fs = require('fs');
 const merge = require('webpack-merge');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -14,10 +15,15 @@ if (!name && isProd) {
 }
 if (isProd) console.log(chalk.green('这里的name是', name));
 
+const entry = fs.existsSync(`${originPath}/src/index.tsx`) ?
+  `${originPath}/src/index.tsx` : fs.existsSync(`${originPath}/src/index.ts`) ?
+  `${originPath}/src/index.ts` : null;
+if (!entry) throw Error(`无法找到入口文件: ${originPath}/src/index.tsx 或 ${originPath}/src/index.ts`);
+
 const buildConfig = {
   devtool: !isProd ? 'cheap-module-eval-source-map' : 'source-map',
   mode: process.env.NODE_ENV || 'production',
-  entry: `${originPath}/src/index.tsx`,
+  entry: entry,
   output: {
     path: distDir,
     filename: "index.js",

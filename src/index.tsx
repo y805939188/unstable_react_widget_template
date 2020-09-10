@@ -1,6 +1,11 @@
 import React from 'react';
 import './index.<%= style%>';
 
+/**
+ * 如果只想开发 react 相关的工具并非组件的话,
+ * 直接将 src/index.tsx 重命名为 index.ts 即可
+ */
+
 const Widget: React.FC<any> = () => {
   return <div
     style={{
