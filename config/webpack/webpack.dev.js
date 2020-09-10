@@ -17,7 +17,7 @@ const devConfig = {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,
-        include: `${demoPath}/src`,
+        include: `${demoPath}`,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
