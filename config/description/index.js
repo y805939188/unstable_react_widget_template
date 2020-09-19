@@ -1,12 +1,17 @@
+const fs = require('fs');
 const path = require('path');
 const ora = require('ora');
 const chalk = require('chalk');
 const execa = require('execa');
 const originPath = process.cwd();
-const entryFilePath = path.join(originPath, 'src', 'index.tsx');
+const entryFilePath = fs.existsSync(`${originPath}/src/index.tsx`) ?
+  `${originPath}/src/index.tsx` : fs.existsSync(`${originPath}/src/index.ts`) ?
+  `${originPath}/src/index.ts` : null;
+if (!entryFilePath) throw Error(`无法找到入口文件: ${originPath}/src/index.tsx 或 ${originPath}/src/index.ts`);
 const isProd = process.env.NODE_ENV === 'production';
 const outputFilePath = isProd ? path.join(originPath, 'lib') : path.join(originPath, 'dev-build');
 const tsCommand = 'tsc';
+
 const tsConfig = [
   entryFilePath,
   '--outDir',
