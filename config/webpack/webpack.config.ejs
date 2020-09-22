@@ -14,10 +14,7 @@ const getStyleConfig = () => {
         loader: 'css-loader',
         options : { modules: true }
       },
-      {
-        loader: 'less-loader',
-        options: { javascriptEnabled: true }
-      }
+      { loader: 'less-loader' }
     ],
   });
 <% } else if (style === 'scss') { %>

@@ -17,7 +17,7 @@ const devConfig = {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,
-        include: `${demoPath}`,
+        include: [`${demoPath}`, `${originPath}/src`],
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -42,6 +42,14 @@ const devConfig = {
         },
       },
     ]
+  },
+  resolve: {
+    alias: {
+      "@root": path.resolve(originPath),
+      "@demo": path.resolve(demoPath),
+      "@component": path.resolve(`${originPath}/src`),
+      "@widget": path.resolve(`${originPath}/src`),
+    },
   },
   devServer: {
     open: true,

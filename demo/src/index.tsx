@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MyWidget from '../../dev-build';
+import MyWidget from '@widget';
 import './index.<%= style%>';
 
 const Test: React.FC<any> = (props) => {

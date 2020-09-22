@@ -16,8 +16,13 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "allowJs": true,
-    "baseUrl": "./src"
+    "baseUrl": "./",
+    "paths": {
+      "@root": ["./"],
+      "@component": ["./src"],
+      "@widget": ["./src"],
+    },
   },
-  "include": ["src", "typings"],
-  "exclude": ["node_modules", "dev-build"],
+  "include": ["src", "demo", "typings"],
+  "exclude": ["node_modules"],
 }
